@@ -1,0 +1,2407 @@
+{
+	"info": {
+		"_postman_id": "948a0910-f753-4701-a2a1-8c3f6e172634",
+		"name": "EndPoint-Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "AllBanks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bank/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllBanks GATEWAY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8070/bank/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"bank",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterBank-CB1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankName\": \"PRUEBABANCO\",\r\n    \"code\": \"cb1\",\r\n    \"directionMain\": \"PRUEBADIRECCION\",\r\n    \"typeBankAccounts\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 3\r\n        }\r\n    ],\r\n    \"typeCredits\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterBank-CB2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankName\":\"PRUEBABANCO2\",\r\n    \"code\":\"cb2\",\r\n    \"directionMain\": \"PRUEBADIRECCION2\",\r\n    \"typeBankAccounts\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 2\r\n        }\r\n    ],\r\n    \"typeCredits\": [\r\n        {\r\n            \"id\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankbyCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "code",
+								"value": "cb1",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":\"cb1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bank/cb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank",
+								"cb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankbyCode Response",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "code",
+								"value": "cb1",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bank/bankbycodeResponse/cb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank",
+								"bankbycodeResponse",
+								"cb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankbyId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bank/BankbyId/628570778f9e833491ad8ba4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank",
+								"BankbyId",
+								"628570778f9e833491ad8ba4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankName\":\"PRUEBABANCOACTUALIZACION\", \r\n    \"directionMain\": \"PRUEBADIRECCIONACTUALIZACION\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/bank/cb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank",
+								"cb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductsAccessToBank",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bank/ProductsbyCode/cb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank",
+								"ProductsbyCode",
+								"cb1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "RegisterCustomer - Personal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codeCustomer\": \"CP1\",\r\n    \"nameCustomer\": \"PRUEBACLIENTE4\",\r\n    \"lastNameCustomer\": \"APELLIDOCLIENTE4\",\r\n    \"directionCustomer\": \"DIRECCIONCLIENTE4\",\r\n    \"emailCustomer\": \"EMAIL322@PRUEBA.COM\",\r\n    \"birthDateCustomer\": \"2001-03-01\",\r\n    \"phoneNumberCustomer\": \"2132132100\",\r\n    \"dniCustomer\": \"213210011\",\r\n    \"customertype\":{\r\n        \"id\": 1\r\n    },\r\n    \"bank\":{\r\n        \"code\": \"cb1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterCustomer - Empresarial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codeCustomer\": \"CP2\",\r\n    \"nameCustomer\": \"PRUEBACLIENTE2\",\r\n    \"lastNameCustomer\": \"APELLIDOCLIENTE2\",\r\n    \"directionCustomer\": \"DIRECCIONCLIENTE2\",\r\n    \"emailCustomer\": \"EMAIL3213.COM\",\r\n    \"birthDateCustomer\": \"2001-10-01\",\r\n    \"phoneNumberCustomer\": \"2132928100\",\r\n    \"dniCustomer\": \"213301011\",\r\n    \"customertype\":{\r\n        \"id\": 2\r\n    },\r\n    \"bank\":{\r\n        \"code\": \"cb2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterCustomer - VIP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codeCustomer\": \"CP3\",\r\n    \"nameCustomer\": \"PRUEBACLIENTEVIP\",\r\n    \"lastNameCustomer\": \"APELLIDOCLIENTEVIP\",\r\n    \"directionCustomer\": \"DIRECCIONVIP\",\r\n    \"emailCustomer\": \"EMVIOP.COM\",\r\n    \"birthDateCustomer\": \"2011-10-01\",\r\n    \"phoneNumberCustomer\": \"2132891100\",\r\n    \"dniCustomer\": \"213819011\",\r\n    \"customertype\":{\r\n        \"id\": 3\r\n    },\r\n    \"bank\":{\r\n        \"code\": \"cb1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterCustomer - PYME",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codeCustomer\": \"CP4\",\r\n    \"nameCustomer\": \"PRUEBACLIEPYME\",\r\n    \"lastNameCustomer\": \"APELLIDOCLIENPYME\",\r\n    \"directionCustomer\": \"DIRECCIPYME\",\r\n    \"emailCustomer\": \"EMIO31P.COM\",\r\n    \"birthDateCustomer\": \"2011-10-01\",\r\n    \"phoneNumberCustomer\": \"213281020\",\r\n    \"dniCustomer\": \"21381314121\",\r\n    \"customertype\":{\r\n        \"id\": 4\r\n    },\r\n    \"bank\":{\r\n        \"code\": \"cb2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CustomerByCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/customer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CLIENTESPORCODIGOBANCO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/CustomerByCodeBank/cb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"CustomerByCodeBank",
+								"cb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/customer/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllCustomer GATEWAY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8070/customer/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"customer",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"nameCustomer\": \"PRUEBACLIENTEACTUALIZAR\",\r\n    \"lastNameCustomer\": \"APELLIDOCLIENTE4\",\r\n    \"directionCustomer\": \"DIRECCIONCLIENTE4\",\r\n    \"emailCustomer\": \"EMAIL322@PRUEBA.COM\",\r\n    \"birthDateCustomer\": \"2001-03-01\",\r\n    \"phoneNumberCustomer\": \"2132132100\",\r\n    \"dniCustomer\": \"213210011\",\r\n    \"customertype\":{\r\n        \"id\": 2\r\n    },\r\n    \"bank\":{\r\n        \"code\": \"cb1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/customer/customerbyId/628abd1a3d12513f39e7d6e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"customerbyId",
+								"628abd1a3d12513f39e7d6e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Customer By DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/customer/customerbydni/213210011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customer",
+								"customerbydni",
+								"213210011"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeCustomer",
+			"item": [
+				{
+					"name": "Registrar Type Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"description\":\"Empresarial\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/customerType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customerType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllCustomerType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/customerType/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"customerType",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllCustomerType GATEWAY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8070/customerType/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"customerType",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeBankAccounts",
+			"item": [
+				{
+					"name": "Registrar-Ahorro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"description\":\"Ahorro\",\r\n    \"maximumLimit\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/typeBankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"typeBankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar-CuentaCorriente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"description\":\"Plazo fijo\",\r\n    \"commission\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/typeBankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"typeBankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar-PlazoFijo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":3,\r\n    \"description\":\"Plazo fijo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/typeBankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"typeBankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllTypeBankAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/typeBankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"typeBankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TypeBankAccountById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/typeBankAccounts/typeBankAccountbyId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"typeBankAccounts",
+								"typeBankAccountbyId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BankAccounts",
+			"item": [
+				{
+					"name": "CreateBankAccounts Tipo Ahorro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberAccount\": \"123456789\",\r\n    \"keyAccount\": 1234,\r\n    \"availableBalanceAccount\": \"1500.00\",\r\n    \"statusAccount\": true, \r\n    \"typeBankAccounts\":{\r\n        \"id\": 1\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"213210011\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBankAccounts Tipo Corriente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberAccount\": \"123456732\",\r\n    \"keyAccount\": 1234,\r\n    \"availableBalanceAccount\": \"1500.00\",\r\n    \"statusAccount\": true, \r\n    \"typeBankAccounts\":{\r\n        \"id\": 2\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"213210011\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBankAccounts Tipo Plazo Fijo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberAccount\": \"333456091\",\r\n    \"keyAccount\": 1234,\r\n    \"dateLastBankAccount\":\"2022-06-08\",\r\n    \"availableBalanceAccount\": \"1500.00\",\r\n    \"statusAccount\": true, \r\n    \"typeBankAccounts\":{\r\n        \"id\": 3\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"213210011\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Saldo e Informacion de Cuentas Bancarias por Codigo Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts/BankAccountsbyCodeCustomer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts",
+								"BankAccountsbyCodeCustomer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Saldo e Informacion de Cuentas Bancarias por Numero de Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts/123456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comunicacion con el Servicio de Customer por DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts/ObtenerCustomerbyDNI/213210011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts",
+								"ObtenerCustomerbyDNI",
+								"213210011"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comunicacion con el Servicio de Debt por DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts/ObtenerDebtbyDNI/213210011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts",
+								"ObtenerDebtbyDNI",
+								"213210011"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BankAccountbyNumberAccountResponse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/bankAccounts/bankAccountbyNumberAccountResponse/123456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccounts",
+								"bankAccountbyNumberAccountResponse",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MovementsBankAccounts",
+			"item": [
+				{
+					"name": "Retiro de Cuentas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"120.00\",\r\n    \"description\": \"Retiro Mi cuenta\", \r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456789\",\r\n        \"keyAccount\": 1234\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccounts/retreats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccounts",
+								"retreats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MovementsBankAccountsbyCodeCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccounts/MovementsBankAccountsbyCodeCustomer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccounts",
+								"MovementsBankAccountsbyCodeCustomer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllMovementsBankAccount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MovementsBankAccountsbyNumberAccount",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccounts/MovementsBankAccountsbyNumberAccount/123456732",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccounts",
+								"MovementsBankAccountsbyNumberAccount",
+								"123456732"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Depositos de Hacia mi cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"2000.00\",\r\n    \"description\": \"Deposito a  mi cuenta\", \r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456789\",\r\n        \"keyAccount\": 1234\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccounts/deposits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccounts",
+								"deposits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Depositos de Hacia mi cuenta externa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"4000.00\",\r\n    \"description\": \"Deposito a  mi cuenta\", \r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456789\", \r\n        \"keyAccount\": 1234 \r\n    },\r\n    \"numberAccountDestination\":\"123456732\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccounts/deposits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccounts",
+								"deposits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Semana 02 - MovementsBankAccounts",
+			"item": [
+				{
+					"name": "Retiro de Cuentas - Actualizado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"120.00\",\r\n    \"description\": \"Retiro Mi cuenta\", \r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456732\",\r\n        \"keyAccount\": 1234\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccountsNew/retreats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccountsNew",
+								"retreats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Depositos de Hacia mi cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"2000.00\",\r\n    \"description\": \"Deposito a  mi cuenta\", \r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456789\",\r\n        \"keyAccount\": 1234\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccountsNew/deposits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccountsNew",
+								"deposits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TypeCredits",
+			"item": [
+				{
+					"name": "AlltypeCredits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/typeCredits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"typeCredits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register typeCredits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"description\":\"PYME\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/typeCredits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"typeCredits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credits",
+			"item": [
+				{
+					"name": "Registrar Credito sin Asociar una Cuenta - Personal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberCredits\": \"1200932313237\",\r\n    \"keyCredit\": \"1254\",\r\n    \"availableBalanceCreditMaximum\": \"1000.00\",\r\n    \"statusRelationAccount\": false, \r\n    \"typeCredits\":{\r\n        \"id\": 1\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"213210011\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/credits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Credito con Asociar una Cuenta - Personal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberCredits\": \"1871932318717\",\r\n    \"keyCredit\": \"1001\", \r\n    \"statusRelationAccount\": true, \r\n    \"typeCredits\":{\r\n        \"id\": 1\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"213210011\"\r\n    },\r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456789\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/credits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Credito sin Asociar - Empresarial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberCredits\": \"1200999113281\",\r\n    \"keyCredit\": \"1254\",\r\n    \"availableBalanceCreditMaximum\": \"1020.00\",\r\n    \"statusRelationAccount\": false, \r\n    \"typeCredits\":{\r\n        \"id\": 2\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"999210810\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/credits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Saldo e Informacion de Creditos  por Codigo Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/credits/CreditsbyCodeCustomer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits",
+								"CreditsbyCodeCustomer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Saldo e Informacion de Creditos  por  Numero de Credito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/credits/1200932313237",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"credits",
+								"1200932313237"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MovementsCredits",
+			"item": [
+				{
+					"name": "PayWithCredit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"1000.00\",\r\n    \"description\": \"Pago con mi Credito\", \r\n    \"credits\":{\r\n        \"numberCredits\": \"1871932318717\",\r\n        \"keyCredit\": 1001\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/movementsCredits/pay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movementsCredits",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MovementsCreditsByCodeCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/movementsCredits/MovementsCreditsbyCodeCustomer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movementsCredits",
+								"MovementsCreditsbyCodeCustomer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MovementsCreditsbyNumberAccount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/movementsCredits/MovementsCreditsbyNumberAccount/1200932313237",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movementsCredits",
+								"MovementsCreditsbyNumberAccount",
+								"1200932313237"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movementsCredits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/movementsCredits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"movementsCredits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Debt",
+			"item": [
+				{
+					"name": "Register Debt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtBalance\": \"1000.00\",\r\n    \"expirateDate\":\"2022-07-01\",\r\n    \"statusDebt\": true, \r\n    \"customer\":{\r\n        \"dniCustomer\": \"213210011\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Debt",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"debtBalance\": \"10.00\",\r\n    \"id\":\"a386158d-f2f8-41bc-a932-91c5a11c5996\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt/a386158d-f2f8-41bc-a932-91c5a11c5996",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt",
+								"a386158d-f2f8-41bc-a932-91c5a11c5996"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DebtById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt/debtbyId/a386158d-f2f8-41bc-a932-91c5a11c5996",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt",
+								"debtbyId",
+								"a386158d-f2f8-41bc-a932-91c5a11c5996"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteDebtById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt/deleteDebt/a386158d-f2f8-41bc-a932-91c5a11c5996",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt",
+								"deleteDebt",
+								"a386158d-f2f8-41bc-a932-91c5a11c5996"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DebtByDNICustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt/debtbyDniCustomer/213210011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt",
+								"debtbyDniCustomer",
+								"213210011"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DebtResponseByDNICustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt/debtbyDniCustomer/213210011",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt",
+								"debtbyDniCustomer",
+								"213210011"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DebtByCodeCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/debt/debtbyCodeCustomer/CP1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"debt",
+								"debtbyCodeCustomer",
+								"CP1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreditCard",
+			"item": [
+				{
+					"name": "Registrar Tarjeta de Credito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberCreditCard\": \"1200932313237\",  \r\n    \"credits\":{\r\n        \"numberCredits\": \"1871932318727\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/creditCard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"creditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Credit Card By Number Credit Card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/creditCard/creditCardbynumbercreditCardResponse/1200932313237",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"creditCard",
+								"creditCardbynumbercreditCardResponse",
+								"1200932313237"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BankAccount-VIP-PYME",
+			"item": [
+				{
+					"name": "CreateBankAccounts - PYME",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberAccount\": \"891271889\",\r\n    \"keyAccount\": 1234,\r\n    \"availableBalanceAccount\": \"4000.00\",\r\n    \"statusAccount\": true, \r\n    \"typeBankAccounts\":{\r\n        \"id\": 1\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"21381314121\"\r\n    },\r\n    \"creditCard\":{\r\n        \"numberCreditCard\" : \"0501932313237\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bankAccountsNew",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccountsNew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBankAccounts - VIP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberAccount\": \"123471889\",\r\n    \"keyAccount\": 1234,\r\n    \"availableBalanceAccount\": \"1500.00\",\r\n    \"statusAccount\": true, \r\n    \"typeBankAccounts\":{\r\n        \"id\": 1\r\n    },\r\n    \"customer\":{\r\n        \"dniCustomer\": \"213819011\"\r\n    },\r\n    \"creditCard\":{\r\n        \"numberCreditCard\" : \"0010932313237\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/bankAccountsNew",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"bankAccountsNew"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transferencia",
+			"item": [
+				{
+					"name": "Transferencia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"1.00\",\r\n    \"description\": \"Transferencia\", \r\n    \"bankAccounts\":{\r\n        \"numberAccount\": \"123456789\", \r\n        \"keyAccount\": 1234 \r\n    },\r\n    \"numberAccountDestination\":\"123456732\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/movementsBankAccountsNew/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"movementsBankAccountsNew",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DebitCard",
+			"item": [
+				{
+					"name": "Registrar Tarjeta de Debito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberDebitCard\": \"009922122313237\",  \r\n    \"bankAccounts\":\r\n     [\r\n        {   \r\n        \"numberAccount\": \"123456789\"\r\n        }\r\n     ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/debitCard/MainBankAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"debitCard",
+								"MainBankAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Tarjeta de Debito a las cuentas que dispone el Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numberDebitCard\": \"009922122381937\", \r\n    \"dniCustomer\":\"213210011\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/debitCard/relationAllBankAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"debitCard",
+								"relationAllBankAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retiro de Dinero de la Tarjeta Debito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"200.00\",\r\n    \"description\": \"Retiro Plata\", \r\n     \"debitCard\":{\r\n        \"numberDebitCard\": \"009922122313237\",\r\n        \"bankAccounts\":[\r\n            {\r\n                \"keyAccount\": \"1234\",\r\n                \"numberAccount\":\"123456789\"\r\n            }\r\n        ]\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/debitCardMovement/retreats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"debitCardMovement",
+								"retreats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Movimiento retiro por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/debitCardMovement/MovementsDebitCard/1b723808-89c0-49da-9cb6-cea9e3a32286",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"debitCardMovement",
+								"MovementsDebitCard",
+								"1b723808-89c0-49da-9cb6-cea9e3a32286"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los Retiros de Dinero de la Tarjeta Debito",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/debitCardMovement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"debitCardMovement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retiro de Dinero de la Tarjeta Debito - Muchas cuentas Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"1000.00\",\r\n    \"description\": \"Retiro Plata\", \r\n     \"debitCard\":{\r\n        \"numberDebitCard\": \"009922122381937\",\r\n        \"bankAccounts\":[\r\n            {\r\n                \"keyAccount\": \"1234\",\r\n                \"numberAccount\":\"123456732\"\r\n            }\r\n        ]\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/debitCardMovement/retreats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"debitCardMovement",
+								"retreats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Yanki",
+			"item": [
+				{
+					"name": "Registar Cuenta Yanki Asociado de una Tarjeta de Credito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"23312d73-5857-54b2-8021-87a1231321122\",     \r\n    \"imei\": \"94309000000\",\r\n    \"phoneNumber\": \"091236543\",\r\n    \"email\":\"prueba@hotmail.com\",\r\n    \"numberDebitCard\":\"009922122313237\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/customer/yanki",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"yanki"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registar Cuenta Yanki sin ninguna relacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"23312d73-5857-54b2-8021-87a1231321121\",\r\n    \"amount\": \"200.00\",\r\n    \"documentType\": \"P\",\r\n    \"numberDocument\" : \"13514326435342\",   \r\n    \"phoneNumber\": \"912036500\",  \r\n    \"imei\": \"94309110312\",\r\n    \"email\":\"prueba21hotmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/customer/yanki",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"customer",
+								"yanki"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transferencia Yanki",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"amount\": \"100.00\",\r\n    \"phoneNumberorigen\": \"912036500\",\r\n    \"phoneNumberdestination\" : \"091236543\"   \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8086/yankiTransfer/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"yankiTransfer",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8072/debitCard/debitCardbydniResponse/009922122313237",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/debitCard/debitCardbydniResponse/009922122313237",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"debitCard",
+								"debitCardbydniResponse",
+								"009922122313237"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8072/bankAccounts/BankAccountResponse/123456789",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8072/bankAccounts/BankAccountResponse/123456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8072",
+							"path": [
+								"bankAccounts",
+								"BankAccountResponse",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "YankiByPhoneNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8086/yankiTransfer/yankibyphone/912036500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8086",
+							"path": [
+								"yankiTransfer",
+								"yankibyphone",
+								"912036500"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BootCoin",
+			"item": [
+				{
+					"name": "BootCoinRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"23312d73-5857-54b2-8021-87a123020112\", \r\n    \"documentType\": \"D\",\r\n    \"numberDocument\" : \"213210112\",   \r\n    \"phoneNumber\": \"911456522\",   \r\n    \"email\":\"prueba2hotmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8095/customer/bankcoin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8095",
+							"path": [
+								"customer",
+								"bankcoin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion para Venta - Yanki",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"amountcoin\": 100, \r\n    \"payType\":\"Venta\",\r\n    \"payMode\":\"Yanki\", \r\n    \"requestorigen\": \"912036500\",\r\n    \"requestdestination\" : \"091236543\",\r\n    \"accountcoinDestination\":\"a4c73578-4e4c-4366-af50-c7971e2eca89\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion para Venta - Transferencia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"amountcoin\": 100, \r\n    \"payType\":\"Venta\",\r\n    \"payMode\":\"Transferencia\", \r\n    \"requestorigen\": \"333456091\",\r\n    \"requestdestination\" : \"123471889\",\r\n    \"accountcoinDestination\":\"a4c73578-4e4c-4366-af50-c7971e2eca89\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion para Compra - Yanki",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"amountcoin\": 10, \r\n    \"payType\":\"Compra\",\r\n    \"payMode\":\"Yanki\", \r\n    \"requestorigen\": \"912036500\",\r\n    \"requestdestination\" : \"091236543\",\r\n    \"accountcoinDestination\":\"a4c73578-4e4c-4366-af50-c7971e2eca89\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion para Compra - Transferencia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"amountcoin\": 5, \r\n    \"payType\":\"Compra\",\r\n    \"payMode\":\"Transferencia\", \r\n    \"requestorigen\": \"333456091\",\r\n    \"requestdestination\" : \"123471889\",\r\n    \"accountcoinDestination\":\"a4c73578-4e4c-4366-af50-c7971e2eca89\"\r\n}\r\n \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion Aceptado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"id\": \"629eecddece3d65595f49c07\",\r\n    \"accountDestinationcoin\":\"b3373e7d-9872-466a-9a67-a57b73a617bb\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation/AcceptRequest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation",
+								"AcceptRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion Aceptado - Compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"id\": \"629eef9368c46b48868da928\",\r\n    \"accountDestinationcoin\":\"b3373e7d-9872-466a-9a67-a57b73a617bb\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation/AcceptRequest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation",
+								"AcceptRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud Operacion Aceptado - Compra Transferencia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"id\": \"629ef61e4d92e76afd7da2f7\",\r\n    \"accountDestinationcoin\":\"b3373e7d-9872-466a-9a67-a57b73a617bb\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/requestOperation/AcceptRequest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"requestOperation",
+								"AcceptRequest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BankTasa",
+			"item": [
+				{
+					"name": "Registar Tasa Banco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"tasaventa\": \"3.51\",\r\n    \"tasacompra\": \"3.80\",\r\n    \"bank\": \r\n        {\r\n            \"code\": \"cb1\"\r\n        } \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/bankTasa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"bankTasa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
